@@ -1,0 +1,8 @@
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\bin\Release\RatBot.exe.config
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\bin\Release\RatBot.exe
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\bin\Release\RatBot.pdb
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\obj\Release\RatBot.csproj.AssemblyReference.cache
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\obj\Release\RatBot.csproj.SuggestedBindingRedirects.cache
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\obj\Release\RatBot.csproj.CoreCompileInputs.cache
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\obj\Release\RatBot.exe
+C:\Users\yamar\coding-projects\rat_project\RatBot\RatBot\obj\Release\RatBot.pdb
